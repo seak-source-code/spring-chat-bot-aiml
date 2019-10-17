@@ -24,6 +24,22 @@
 		<java.version>1.8</java.version>
 	</properties>
 
+	<repositories>
+		<repository>
+			<!-- DO NOT set id to "local" because it is reserved by Maven -->
+			<id>lib</id>
+			<url>file://${project.basedir}/lib</url>
+		</repository>
+	</repositories>
+
+<!--	<repositories>-->
+<!--		<repository>-->
+<!--			&lt;!&ndash; DO NOT set id to "local" because it is reserved by Maven &ndash;&gt;-->
+<!--			<id>lib</id>-->
+<!--			<url>file://${project.basedir}/lib</url>-->
+<!--		</repository>-->
+<!--	</repositories>-->
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -40,15 +56,23 @@
 			<scope>test</scope>
 		</dependency>
 		<!-- The Program AB Lib which is embedded in project -->
+<!--		<dependency>-->
+<!--			<groupId>ab</groupId>-->
+<!--			<artifactId>com.google</artifactId>-->
+<!--			<scope>system</scope>-->
+<!--			<version>0.0.4.3</version>-->
+<!--&lt;!&ndash;			<systemPath>/Users/acleda/Desktop/ai-chat-bot-spring framework/simplebot-master/src/lib/Ab.jar</systemPath>&ndash;&gt;-->
+<!--			<systemPath>${basedir}/src/lib/Ab.jar</systemPath>-->
+<!--		</dependency>-->
+
 		<dependency>
-			<groupId>ab</groupId>
-			<artifactId>com.google</artifactId>
-			<scope>system</scope>
-			<version>0.0.4.3</version>
-<!--			<systemPath>/Users/acleda/Desktop/ai-chat-bot-spring framework/simplebot-master/src/lib/Ab.jar</systemPath>-->
-			<systemPath>${basedir}/src/lib/Ab.jar</systemPath>
+					<groupId>ab</groupId>
+					<artifactId>com.google</artifactId>
+					<scope>system</scope>
 		</dependency>
 	</dependencies>
+
+
 
 	<build>
 		<plugins>
@@ -58,6 +82,7 @@
 			</plugin>
 		</plugins>
 	</build>
+
 
 
 </project>
