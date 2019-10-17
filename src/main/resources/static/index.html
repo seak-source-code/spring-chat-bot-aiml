@@ -1,0 +1,74 @@
+<html>
+<head>
+
+<script src="/js/jquery-3.2.1.min.js"></script>
+<style>
+.userText
+{
+color:blue;
+}
+.botText
+{
+color:red;
+
+}
+
+#chatwindow{
+height:400px;
+width:400px;
+overflow: auto;
+}
+span {
+
+    padding: 2px;
+    color: white;
+}
+
+#spanleft {
+    background-color: red;
+
+}
+#spanright {
+    background-color: blue;
+}
+
+
+</style>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script
+
+</head>
+<body>
+<div id="chatwindow">
+
+</div>
+<input type="text" id="chatbox" />
+<button id="send">Send</button>
+
+<script>
+$(function () {
+    $("#send").on('click', function () {
+    var chatText=$("#chatbox").val();
+    $("#chatbox").val("");
+    var p="<p align='right' class='userText'><span id='spanright'>"+chatText+"</span></p>";
+       $("#chatwindow").append(p);
+        $.ajax({
+            url: 'getResponse',
+            data: {
+                request: chatText,
+            },
+            success: function(data){
+             var p="<p align='left' class='botText'><span id='spanleft'>"+data+"</span></p>";
+     $("#chatwindow").append(p);
+  }
+           
+        });
+    });
+});
+</script>
+</body>
+</html>
