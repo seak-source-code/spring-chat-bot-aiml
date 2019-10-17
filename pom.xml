@@ -45,7 +45,8 @@
 			<artifactId>com.google</artifactId>
 			<scope>system</scope>
 			<version>0.0.4.3</version>
-			<systemPath>/Users/acleda/Desktop/ai-chat-bot-spring framework/simplebot-master/src/lib/Ab.jar</systemPath>
+<!--			<systemPath>/Users/acleda/Desktop/ai-chat-bot-spring framework/simplebot-master/src/lib/Ab.jar</systemPath>-->
+			<systemPath>${basedir}/src/lib/Ab.jar</systemPath>
 		</dependency>
 	</dependencies>
 
